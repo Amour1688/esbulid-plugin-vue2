@@ -1,0 +1,1 @@
+# esbulid-plugin-vue2
