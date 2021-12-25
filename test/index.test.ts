@@ -1,14 +1,14 @@
 import { build } from 'esbuild'
-import path from 'path'
 import vue from '../src'
 
 test('basic', async () => {
   const result = await build({
+    absWorkingDir: process.cwd(),
     bundle: true,
     write: false,
-    outdir: path.join(__dirname, './fixtures/dist'),
+    outdir: './test/fixtures/dist',
     entryPoints: [
-      path.join(__dirname, './fixtures/a.vue')
+      './test/fixtures/a.vue'
     ],
     plugins: [vue()],
     external: ['vue']
