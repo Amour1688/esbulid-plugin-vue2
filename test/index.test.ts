@@ -1,5 +1,5 @@
-import { build } from 'esbuild'
-import vue from '../src'
+import { build } from 'esbuild';
+import vue from '../src';
 
 test('basic', async () => {
   const result = await build({
@@ -8,13 +8,13 @@ test('basic', async () => {
     write: false,
     outdir: './test/fixtures/dist',
     entryPoints: [
-      './test/fixtures/a.vue'
+      './test/fixtures/a.vue',
     ],
     plugins: [vue()],
-    external: ['vue']
+    external: ['vue'],
   });
 
   for (const file of result.outputFiles) {
-    expect(file.text).toMatchSnapshot()
+    expect(file.text).toMatchSnapshot();
   }
 });

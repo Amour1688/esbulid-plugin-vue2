@@ -1,12 +1,11 @@
 // https://github.com/vuejs/vue-loader/blob/master/lib/runtime/componentNormalizer.js
 
-/* globals __VUE_SSR_CONTEXT__ */
 
 // IMPORTANT: Do NOT use ES2015 features in this file (except for modules).
 // This module is a runtime utility for cleaner component module output and will
 // be included in the final webpack user bundle.
 
-export const componentNormalizerPath = "\0/rollup/vueComponentNormalizer?virtual";
+export const componentNormalizerPath = '\0/rollup/vueComponentNormalizer?virtual';
 
 export const normalizeComponentCode = `
 export default function normalizeComponent(

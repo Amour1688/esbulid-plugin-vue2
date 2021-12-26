@@ -25,6 +25,6 @@ export function transformStyle(
 
   return {
     code,
-    loader: block.lang
+    loader: block.lang,
   };
 }

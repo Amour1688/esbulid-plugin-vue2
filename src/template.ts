@@ -1,8 +1,8 @@
-import { getDescriptor } from './utils/descriptorCache'
-import { compileTemplate } from '@vue/component-compiler-utils'
-import hash from 'hash-sum'
+import { getDescriptor } from './utils/descriptorCache';
+import { compileTemplate } from '@vue/component-compiler-utils';
+import hash from 'hash-sum';
 
-const vueTemplateCompiler = require('vue-template-compiler')
+const vueTemplateCompiler = require('vue-template-compiler');
 
 
 export function transformRequireToImport(code: string): string {
@@ -22,14 +22,14 @@ export function transformRequireToImport(code: string): string {
 }
 
 export function transformTemplate(
-  filename: string
+  filename: string,
 ) {
   const descriptor = getDescriptor(filename);
 
   const { template } = descriptor;
 
   if (!template) {
-    return ''
+    return '';
   }
 
 
@@ -41,7 +41,7 @@ export function transformTemplate(
     optimizeSSR: false,
     prettify: false,
     preprocessLang: template.lang,
-  })
+  });
 
 
   if (tips.length) {
